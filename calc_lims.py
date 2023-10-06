@@ -31,7 +31,8 @@ if __name__ == "__main__":
     hist_data = np.zeros(2**16, dtype=np.uint64)
 
     for dataset in datasets:
-        paths = sorted(dataset.esrf_jp2_path.glob("*.jp2"))
+        step = 10
+        paths = sorted(dataset.esrf_jp2_path.glob("*.jp2"))[::step]
         print(f"Processing {dataset.name}...")
 
         with Pool() as p:
