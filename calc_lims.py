@@ -40,4 +40,3 @@ if __name__ == "__main__":
 
         counts = np.sum(result, axis=0)
         save_array(dataset.esrf_jp2_path.parent / f"counts_{dataset.name}.zarr", counts)
-        break
