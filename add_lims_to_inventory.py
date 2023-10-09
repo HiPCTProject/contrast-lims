@@ -29,6 +29,8 @@ if __name__ == "__main__":
         hist_path = HIST_PATH / f"counts_{dataset.name}.npz"
         if hist_path.exists():
             lims = limits_from_counts(hist_path=hist_path)
+
+            print(dataset.name, lims)
             dataset.contrast_low = lims[0]
             dataset.contrast_high = lims[1]
 
