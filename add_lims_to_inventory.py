@@ -15,7 +15,7 @@ from calc_lims import HIST_PATH
 def limits_from_counts(hist_path: Path) -> Tuple[int, int]:
     counts = np.load(hist_path)["counts"]
     counts_sum = np.cumsum(counts)
-    counts_sum /= counts_sum[-1]
+    counts_sum = counts_sum.astype(float) / counts_sum[-1]
 
     lower_lim = np.argmax(counts_sum > 0.05)
     upper_lim = np.argmax(counts_sum > 0.95)
