@@ -4,10 +4,9 @@ import glymur
 from pathlib import Path
 from multiprocessing import Pool
 
-from zarr.convenience import save_array
-
 from tqdm import tqdm
 
+HIST_PATH = Path("/data/projects/hop/data_repository/Various/histograms")
 
 def data_in_circle(arr):
     """
@@ -39,4 +38,4 @@ if __name__ == "__main__":
             result = list(tqdm(p.imap(value_count, paths), total=len(paths)))
 
         counts = np.sum(result, axis=0)
-        save_array(dataset.esrf_jp2_path.parent / f"counts_{dataset.name}.zarr", counts)
+        np.savez_compressed(HIST_PATH / f"counts_{dataset.name}.npz", counts=counts)
