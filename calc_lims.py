@@ -17,7 +17,9 @@ def data_in_circle(arr: npt.NDArray[Any]) -> npt.NDArray[Any]:
     Given a 2D array, return only an array inside a circle touching the edges.
     """
     nx, ny = arr.shape
-    X, Y = np.meshgrid(np.linspace(-0.5, 0.5, nx), np.linspace(-0.5, 0.5, ny))
+    X, Y = np.meshgrid(
+        np.linspace(-0.5, 0.5, nx), np.linspace(-0.5, 0.5, ny), indexing="ij"
+    )
     mask = (X**2 + Y**2) < 0.25
     return arr[mask]
 
