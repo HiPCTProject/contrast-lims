@@ -9,8 +9,7 @@ from tqdm import tqdm
 
 from hipct_data_tools import load_datasets
 
-HIST_PATH = Path("/data/projects/hop/data_repository/Various/histograms")
-
+HIST_PATH = Path("/data/projects/hop/data_repository/Various/data/histograms")
 
 def data_in_circle(arr: npt.NDArray[Any]) -> npt.NDArray[Any]:
     """
@@ -33,6 +32,9 @@ def value_count(jp2_path: Path) -> npt.NDArray[np.uint64]:
 
 
 if __name__ == "__main__":
+    if not HIST_PATH.exists():
+        raise FileNotFoundError(f"No such directory: '{HIST_PATH}")
+
     datasets = load_datasets()
 
     hist_data = np.zeros(2**16, dtype=np.uint64)
