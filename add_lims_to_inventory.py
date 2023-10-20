@@ -9,7 +9,7 @@ import numpy as np
 from hipct_data_tools import load_datasets
 from hipct_data_tools.inventory.gen_inventory import save_datasets
 
-from calc_lims import HIST_PATH
+from calc_distributions import HIST_PATH
 
 
 PERCENTILES = [1, 99]
