@@ -7,7 +7,7 @@ from typing import Tuple
 import numpy as np
 
 from hipct_data_tools import load_datasets
-from hipct_data_tools.inventory.gen_inventory import save_datasets
+from hipct_data_tools.inventory.esrf_report import save_datasets
 
 from calc_distributions import HIST_PATH
 
