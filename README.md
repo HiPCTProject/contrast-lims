@@ -14,6 +14,3 @@ salloc --partition=bm18 --exclusive --mem=0 --ntasks=1 --time=12:00:00 srun --pt
 ```
 
 The distributions are saved to files in `/data/projects/hop/data_repository/Various/data/histograms`.
-
-## Calculating percentiles & adding to inventory
-`add_lims_to_inventory.py` calculates percentiles from the pre-computed data distributions, and saves them to the HiP-CT inventory.
