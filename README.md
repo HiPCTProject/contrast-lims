@@ -10,7 +10,7 @@ The code is split into two parts:
 This is parallelised across slices of images, so makes sense to run it on a cluster at ESRF.
 
 ```
-salloc --partition=bm18 --exclusive --mem=0 --ntasks=1 --time=12:00:00 srun --pty bash
+salloc --ntasks=1 --cpus-per-task=64 --time=2:00:00 srun --pty bash
 ```
 
 The distributions are saved to files in `/data/projects/hop/data_repository/Various/data/histograms`.
